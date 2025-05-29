@@ -39,15 +39,13 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 px-4 bg-slate-900/30">
-      <div className="container mx-auto max-w-7xl">
+    <section id="services" className="py-20 px-6 bg-gray-50">
+      <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
-              AI & Digital Services
-            </span>
+          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">
+            AI & Digital Services
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
             Comprehensive suite of AI-powered services and digital marketing solutions to accelerate your business growth.
           </p>
         </div>
@@ -56,30 +54,30 @@ export const ServicesSection = () => {
           {services.map((service, index) => (
             <Card 
               key={service.name}
-              className="bg-slate-800/50 border-teal-500/20 hover:border-teal-500/40 transition-all duration-300 group hover:scale-105 backdrop-blur-sm"
+              className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300 group"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <CardHeader className="text-center">
-                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-r from-teal-500 to-blue-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="h-7 w-7 text-white" />
+              <CardHeader className="text-center p-6">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="h-7 w-7 text-blue-600" />
                 </div>
-                <CardTitle className="text-xl font-bold text-white mb-2">{service.name}</CardTitle>
-                <CardDescription className="text-slate-300 text-sm leading-relaxed">
+                <CardTitle className="text-xl font-normal text-gray-900 mb-3">{service.name}</CardTitle>
+                <CardDescription className="text-gray-600 text-sm leading-relaxed">
                   {service.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-6 pt-0">
                 <div className="space-y-2 mb-6">
                   {service.benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-center text-slate-300 text-sm">
-                      <div className="w-1.5 h-1.5 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full mr-2"></div>
+                    <div key={idx} className="flex items-center text-gray-700 text-sm">
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></div>
                       {benefit}
                     </div>
                   ))}
                 </div>
                 <Button 
                   variant="outline" 
-                  className="w-full border-teal-500/50 text-teal-400 hover:bg-teal-500/10"
+                  className="w-full border-gray-300 text-gray-700 hover:bg-gray-50"
                   onClick={() => scrollToSection('#contact')}
                 >
                   Learn More
@@ -92,7 +90,7 @@ export const ServicesSection = () => {
         <div className="text-center mt-12">
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-lg px-8 py-6"
+            className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6"
             onClick={() => scrollToSection('#contact')}
           >
             View All Services

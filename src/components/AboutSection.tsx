@@ -27,16 +27,14 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4">
-      <div className="container mx-auto max-w-7xl">
+    <section id="about" className="py-20 px-6 bg-white">
+      <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-                About Multisence AI
-              </span>
+            <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">
+              About Multisence AI
             </h2>
-            <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
+            <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-light">
               <p>
                 At Multisence AI, we believe that artificial intelligence should be intuitive, 
                 accessible, and transformative. Founded with a vision to bridge the gap between 
@@ -60,15 +58,15 @@ export const AboutSection = () => {
             {values.map((value, index) => (
               <Card 
                 key={value.title}
-                className="bg-slate-900/50 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group backdrop-blur-sm"
+                className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300 group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-to-r from-blue-500 to-teal-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <value.icon className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <value.icon className="h-6 w-6 text-blue-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">{value.description}</p>
+                  <h3 className="text-lg font-normal text-gray-900 mb-2">{value.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -77,8 +75,8 @@ export const AboutSection = () => {
 
         {/* Team Section */}
         <div className="mt-20 text-center">
-          <h3 className="text-3xl font-bold text-white mb-8">Our Vision</h3>
-          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+          <h3 className="text-3xl font-light text-gray-900 mb-8">Our Vision</h3>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             To create a future where artificial intelligence seamlessly integrates into everyday life, 
             empowering businesses and individuals to achieve more than they ever thought possible. 
             We envision a world where AI doesn't replace human creativity and intuition, but amplifies it.

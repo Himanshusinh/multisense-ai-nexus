@@ -32,15 +32,13 @@ export const BlogSection = () => {
   ];
 
   return (
-    <section id="blog" className="py-20 px-4 bg-slate-900/30">
-      <div className="container mx-auto max-w-7xl">
+    <section id="blog" className="py-20 px-6 bg-gray-50">
+      <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-              Latest Insights
-            </span>
+          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">
+            Latest Insights
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
             Stay updated with the latest trends in AI, industry insights, and expert analysis from our team.
           </p>
         </div>
@@ -49,25 +47,25 @@ export const BlogSection = () => {
           {blogPosts.map((post, index) => (
             <Card 
               key={post.title}
-              className="bg-slate-800/50 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group hover:scale-105 backdrop-blur-sm"
+              className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300 group"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <CardHeader>
-                <div className="flex items-center justify-between text-sm text-slate-400 mb-3">
-                  <span className="bg-gradient-to-r from-blue-500 to-teal-500 text-white px-3 py-1 rounded-full text-xs">
+              <CardHeader className="p-6">
+                <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
+                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs">
                     {post.category}
                   </span>
                   <span>{post.readTime}</span>
                 </div>
-                <CardTitle className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                <CardTitle className="text-xl font-normal text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">
                   {post.title}
                 </CardTitle>
-                <CardDescription className="text-slate-300 leading-relaxed">
+                <CardDescription className="text-gray-600 leading-relaxed">
                   {post.excerpt}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="flex items-center justify-between text-sm text-slate-400 mb-4">
+              <CardContent className="p-6 pt-0">
+                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                   <div className="flex items-center">
                     <User className="h-4 w-4 mr-2" />
                     {post.author}
@@ -79,7 +77,7 @@ export const BlogSection = () => {
                 </div>
                 <Button 
                   variant="outline" 
-                  className="w-full border-blue-500/50 text-blue-400 hover:bg-blue-500/10 group"
+                  className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 group"
                 >
                   Read More
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -92,7 +90,7 @@ export const BlogSection = () => {
         <div className="text-center mt-12">
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-lg px-8 py-6"
+            className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6"
           >
             View All Articles
           </Button>

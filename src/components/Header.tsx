@@ -24,14 +24,14 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-blue-500/20">
-      <div className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-teal-400 rounded-lg flex items-center justify-center">
-              <span className="text-slate-900 font-bold text-sm">M</span>
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">M</span>
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
+            <span className="text-2xl font-light text-gray-900">
               Multisence AI
             </span>
           </div>
@@ -42,10 +42,9 @@ export const Header = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-slate-300 hover:text-blue-400 transition-colors duration-300 relative group"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-teal-400 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </nav>
@@ -53,13 +52,13 @@ export const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button 
               variant="outline" 
-              className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50"
               onClick={() => scrollToSection('#contact')}
             >
               Get Demo
             </Button>
             <Button 
-              className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600"
+              className="bg-blue-600 hover:bg-blue-700 text-white"
               onClick={() => scrollToSection('#contact')}
             >
               Contact Us
@@ -68,7 +67,7 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-slate-300"
+            className="md:hidden text-gray-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -77,13 +76,13 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-blue-500/20">
+          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4 mt-4">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-left"
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-left font-medium"
                 >
                   {item.name}
                 </button>
@@ -91,13 +90,13 @@ export const Header = () => {
               <div className="flex flex-col space-y-2 pt-4">
                 <Button 
                   variant="outline" 
-                  className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
                   onClick={() => scrollToSection('#contact')}
                 >
                   Get Demo
                 </Button>
                 <Button 
-                  className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600"
+                  className="bg-blue-600 hover:bg-blue-700 text-white"
                   onClick={() => scrollToSection('#contact')}
                 >
                   Contact Us
