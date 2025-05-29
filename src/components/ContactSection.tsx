@@ -37,25 +37,25 @@ export const ContactSection = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "hello@multisenceai.com",
+      content: "multisenceai7@gmail.com",
       description: "Get in touch with our team"
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (555) 123-4567",
+      content: "+91 7203907017",
       description: "Mon-Fri, 9am-6pm EST"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "123 AI Innovation Drive, Tech City, TC 12345",
+      content: "Ahmedabad",
       description: "Our headquarters"
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      content: "+1 (555) 987-6543",
+      content: "+91 7203907017",
       description: "Quick support available"
     }
   ];
