@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
@@ -11,7 +18,6 @@ export const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      {/* Circuit Pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <defs>
@@ -42,6 +48,7 @@ export const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-lg px-8 py-6 group"
+              onClick={() => scrollToSection('#products')}
             >
               Explore Our Products
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -50,6 +57,7 @@ export const Hero = () => {
               size="lg" 
               variant="outline" 
               className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10 text-lg px-8 py-6"
+              onClick={() => scrollToSection('#contact')}
             >
               Watch Demo
             </Button>

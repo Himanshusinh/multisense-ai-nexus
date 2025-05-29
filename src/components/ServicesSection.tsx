@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Cpu, Search, Share2, Bot } from "lucide-react";
 
 export const ServicesSection = () => {
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const services = [
     {
       name: "Custom AI Solutions",
@@ -73,6 +80,7 @@ export const ServicesSection = () => {
                 <Button 
                   variant="outline" 
                   className="w-full border-teal-500/50 text-teal-400 hover:bg-teal-500/10"
+                  onClick={() => scrollToSection('#contact')}
                 >
                   Learn More
                 </Button>
@@ -85,6 +93,7 @@ export const ServicesSection = () => {
           <Button 
             size="lg"
             className="bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-lg px-8 py-6"
+            onClick={() => scrollToSection('#contact')}
           >
             View All Services
           </Button>

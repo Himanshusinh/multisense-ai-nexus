@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart, Calendar, Brain, ArrowRight } from "lucide-react";
 
 export const ProductsSection = () => {
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const products = [
     {
       name: "CartX",
@@ -71,11 +78,13 @@ export const ProductsSection = () => {
                   <Button 
                     variant="outline" 
                     className="flex-1 border-blue-500/50 text-blue-400 hover:bg-blue-500/10"
+                    onClick={() => scrollToSection('#about')}
                   >
                     Learn More
                   </Button>
                   <Button 
                     className={`flex-1 bg-gradient-to-r ${product.color} hover:opacity-90 group`}
+                    onClick={() => scrollToSection('#contact')}
                   >
                     Request Demo
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
