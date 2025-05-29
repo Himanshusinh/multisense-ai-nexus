@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Calendar, Brain, ArrowRight } from "lucide-react";
+import { ShoppingCart, Calendar, Brain, ArrowRight, CheckCircle } from "lucide-react";
 
 export const ProductsSection = () => {
   const scrollToSection = (href: string) => {
@@ -14,78 +14,91 @@ export const ProductsSection = () => {
   const products = [
     {
       name: "CartX",
-      description: "Smart retail trolley that auto-detects items and auto-generates bills using advanced AI vision technology.",
+      description: "Revolutionary smart retail solution with AI-powered item detection and automated billing system for seamless shopping experiences.",
       icon: ShoppingCart,
-      features: ["Auto Item Detection", "Instant Billing", "Inventory Management", "Customer Analytics"],
-      color: "text-blue-600"
+      features: ["Computer Vision Detection", "Real-time Billing", "Inventory Analytics", "Customer Insights"],
+      color: "from-blue-500 to-blue-600",
+      badge: "Retail AI"
     },
     {
       name: "AppointX",
-      description: "AI-based appointment management and scheduling platform that optimizes booking efficiency.",
+      description: "Intelligent appointment management platform that optimizes scheduling through advanced AI algorithms and predictive analytics.",
       icon: Calendar,
-      features: ["Smart Scheduling", "AI Optimization", "Calendar Integration", "Automated Reminders"],
-      color: "text-green-600"
+      features: ["Smart Scheduling AI", "Calendar Integration", "Automated Notifications", "Analytics Dashboard"],
+      color: "from-emerald-500 to-emerald-600",
+      badge: "Business AI"
     },
     {
       name: "WildMind AI",
-      description: "Research-focused product for creative content generation and strategy powered by advanced AI models.",
+      description: "Advanced creative intelligence platform for content generation, strategic planning, and brand voice development.",
       icon: Brain,
-      features: ["Content Generation", "Strategy Planning", "Creative Insights", "Brand Voice Training"],
-      color: "text-purple-600"
+      features: ["Content Generation", "Strategic Planning", "Brand Voice AI", "Creative Analytics"],
+      color: "from-purple-500 to-purple-600",
+      badge: "Creative AI"
     }
   ];
 
   return (
-    <section id="products" className="py-20 px-6 bg-white">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900">
+    <section id="products" className="py-24 px-6 bg-white">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-20">
+          <div className="inline-block mb-4 px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
             Our Products
+          </div>
+          <h2 className="text-4xl md:text-6xl font-extralight mb-8 text-slate-900 tracking-tight">
+            AI-Powered
+            <span className="font-light bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Solutions</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-            Innovative AI-powered solutions designed to transform how businesses operate and engage with customers.
+          <p className="text-xl text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">
+            Cutting-edge AI products designed to transform how businesses operate, 
+            engage customers, and drive sustainable growth in the digital era.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <Card 
               key={product.name} 
-              className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300 group"
+              className="group bg-white border border-slate-200 hover:border-slate-300 hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <CardHeader className="text-center p-8">
-                <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <product.icon className={`h-8 w-8 ${product.color}`} />
+              <CardHeader className="text-center p-8 pb-6">
+                <div className="relative mb-6">
+                  <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${product.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <product.icon className="h-10 w-10 text-white" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium">
+                    {product.badge}
+                  </div>
                 </div>
-                <CardTitle className="text-2xl font-light text-gray-900 mb-4">{product.name}</CardTitle>
-                <CardDescription className="text-gray-600 text-base leading-relaxed">
+                <CardTitle className="text-2xl font-light text-slate-900 mb-4 tracking-tight">{product.name}</CardTitle>
+                <CardDescription className="text-slate-600 text-base leading-relaxed font-light">
                   {product.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="p-8 pt-0">
-                <div className="space-y-3 mb-8">
+              <CardContent className="p-8 pt-4">
+                <div className="space-y-4 mb-8">
                   {product.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-gray-700">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                      {feature}
+                    <div key={idx} className="flex items-center text-slate-700">
+                      <CheckCircle className="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" />
+                      <span className="font-medium">{feature}</span>
                     </div>
                   ))}
                 </div>
                 <div className="flex gap-3">
                   <Button 
                     variant="outline" 
-                    className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50"
+                    className="flex-1 border-slate-300 text-slate-700 hover:bg-slate-50 font-medium"
                     onClick={() => scrollToSection('#about')}
                   >
                     Learn More
                   </Button>
                   <Button 
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white group"
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white group/btn shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
                     onClick={() => scrollToSection('#contact')}
                   >
                     Request Demo
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </div>
               </CardContent>

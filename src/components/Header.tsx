@@ -11,7 +11,7 @@ export const Header = () => {
     { name: "Products", href: "#products" },
     { name: "Services", href: "#services" },
     { name: "About", href: "#about" },
-    { name: "Blog", href: "#blog" },
+    { name: "Insights", href: "#blog" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -24,16 +24,21 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200/50 shadow-sm">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">M</span>
+          <div className="flex items-center space-x-4">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+              <span className="text-white font-bold text-lg">M</span>
             </div>
-            <span className="text-2xl font-light text-gray-900">
-              Multisence AI
-            </span>
+            <div>
+              <span className="text-2xl font-light text-slate-900 tracking-tight">
+                Multisence AI
+              </span>
+              <div className="text-xs text-slate-500 font-medium tracking-wide">
+                FUTURE INTELLIGENCE
+              </div>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -42,7 +47,7 @@ export const Header = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className="text-slate-700 hover:text-blue-600 transition-colors duration-300 font-medium text-sm uppercase tracking-wide hover:bg-blue-50 px-3 py-2 rounded-lg"
               >
                 {item.name}
               </button>
@@ -52,13 +57,13 @@ export const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button 
               variant="outline" 
-              className="border-blue-600 text-blue-600 hover:bg-blue-50"
+              className="border-slate-300 text-slate-700 hover:bg-slate-50 font-medium"
               onClick={() => scrollToSection('#contact')}
             >
               Get Demo
             </Button>
             <Button 
-              className="bg-blue-600 hover:bg-blue-700 text-white"
+              className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
               onClick={() => scrollToSection('#contact')}
             >
               Contact Us
@@ -67,7 +72,7 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-slate-700 p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -76,21 +81,21 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200">
-            <div className="flex flex-col space-y-4 mt-4">
+          <nav className="md:hidden mt-6 pb-6 border-t border-slate-200">
+            <div className="flex flex-col space-y-4 mt-6">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-left font-medium"
+                  className="text-slate-700 hover:text-blue-600 transition-colors duration-300 text-left font-medium py-2"
                 >
                   {item.name}
                 </button>
               ))}
-              <div className="flex flex-col space-y-2 pt-4">
+              <div className="flex flex-col space-y-3 pt-4">
                 <Button 
                   variant="outline" 
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                  className="border-slate-300 text-slate-700 hover:bg-slate-50"
                   onClick={() => scrollToSection('#contact')}
                 >
                   Get Demo
